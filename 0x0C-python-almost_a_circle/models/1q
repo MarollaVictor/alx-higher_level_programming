@@ -1,0 +1,65 @@
+#!/bin/usr/python3
+"""
+Rectangle Module
+"""
+from base import Base
+
+class Rectangle(Base):
+     """
+     Rectangle class and base subclass
+     """
+     def __init__(self, w, h, x=0, y=0, id=None):
+         super().__init__(id)
+         """
+         width
+         """
+         self.w = w
+         """
+         height
+         """
+         self.h = h
+         slef.x = x
+         self.y = y
+
+     @property
+     def w(self):
+         return self.__w
+
+     @w.setter
+     def w(self, value):
+         self.__w = value
+
+     @property
+     def h(self):
+         return self.__h
+
+     @h.setter
+     def h(self, value):
+         self.__h = value
+
+     @property
+     def x(self):
+         return self.__x
+
+     @x.setter
+     def x(self, value):
+         self.__x = value
+
+     @property
+     def y(self):
+         return self.__y
+
+     @y.setter
+     def w(self, value):
+         self.__y = value
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 2)
+    print(r1.id)
+
+    r2 = Rectangle(2, 10)
+    print(r2.id)
+
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
