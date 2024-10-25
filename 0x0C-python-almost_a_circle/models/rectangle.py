@@ -2,32 +2,32 @@
 """
 Rectangle Module
 """
-from base import Base
+from models.base import Base
 
 class Rectangle(Base):
      """
      Rectangle class and base subclass
      """
-     def __init__(self, w, h, x=0, y=0, id=None):
+     def __init__(self, width, height, x=0, y=0, id=None):
          """
          Initializw a new rectangle
          """
          super().__init__(id)
 
-         self.w = w
-         self.h = h
+         self.width = width
+         self.height = height
          self.x = x
          self.y = y
 
      @property
-     def w(self):
+     def width(self):
          """
          width getter
          """
-         return self.__w
+         return self.__width
 
-     @w.setter
-     def w(self, value):
+     @width.setter
+     def width(self, value):
          """
          witdh setter
          """
@@ -35,17 +35,17 @@ class Rectangle(Base):
              raise TypeError("width must be an integer")
          if value < 0:
              raise ValueError("width must be >= 0")
-         self.__w = value
+         self.__width = value
 
      @property
-     def h(self):
+     def height(self):
          """
          height getter
          """
-         return self.__h
+         return self.__height
 
-     @h.setter
-     def h(self, value):
+     @height.setter
+     def height(self, value):
          """
          height setter
          """
@@ -53,7 +53,7 @@ class Rectangle(Base):
              raise TypeError("height must be an integer")
          if value < 0:
              raise ValueError("height must be >= 0")
-         self.__h = value
+         self.__height = value
 
      @property
      def x(self):
@@ -98,14 +98,3 @@ class Rectangle(Base):
          area = self.w * self.h
 
          return area
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(3, 2)
-    print(r1.area())
-
-    r2 = Rectangle(2, 10)
-    print(r2.area())
-
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
